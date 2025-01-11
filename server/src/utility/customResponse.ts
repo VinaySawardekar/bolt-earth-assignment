@@ -1,6 +1,5 @@
 import { ErrorResponse, SuccessResponse } from "../types/customResponse";
 import { statusText } from "../config/constants";
-import { UserLoginResponseBody } from "../types/user";
 
 /**
  * Gets Success Response for the api.
@@ -12,7 +11,7 @@ import { UserLoginResponseBody } from "../types/user";
  */
 function createSuccessResponse<T>(
   message: string,
-  data: T[] | UserLoginResponseBody[],
+  data: T[],
 ): SuccessResponse<T> {
   return {
     status: statusText.SUCCESS,

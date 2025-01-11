@@ -5,13 +5,6 @@ import {
   createSuccessResponse,
 } from "../../utility/customResponse";
 import Event from "../event/model";
-import Ticket from "../ticket/model";
-import {
-  CreateEventRequestBody,
-  PurchaseTicketRequestBody,
-} from "../../types/event";
-import { ObjectId } from "mongoose";
-import { EidRequest } from "../../types/transformRequest";
 
 /**
  * Retrieves a report of all events with the number of tickets sold for each event.

@@ -61,6 +61,40 @@ Contains document of the Backend resources such as Node.js, that are being using
 - Copy the contents `.env.sample` to the `.env`.
 - Update the values of the keys in `.env` as per your configuration.
 
+### Setup MongoDB
+
+#### Install Xcode Command-Line Tools
+
+Install the Xcode command-line tools by running the following command in your macOS Terminal:
+
+```bash
+  xcode-select --install
+```
+
+#### Installing MongoDB 8.0 Community Edition using brew
+
+```bash
+  brew tap mongodb/brew
+```
+
+```bash
+  brew update
+```
+
+```bash
+  brew install mongodb-community@8.0
+```
+
+#### To run MongoDB (i.e. the mongod process) as a macOS service, run:
+
+```bash
+  brew services start mongodb-community@8.0
+```
+
+#### OR
+
+Setup DB Cluster on MongoDB Atlas
+
 ### Running the application
 
 #### Start the server

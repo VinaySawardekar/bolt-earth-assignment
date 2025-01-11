@@ -51,6 +51,15 @@ export class ReportComponent implements OnInit {
     private toastService: SnackBarToastService
   ) {}
 
+  /**
+   * OnInit lifecycle hook.
+   *
+   * Subscribes to the report observable and on success, maps the data by
+   * adding a position and revenue property to each item. The event_status
+   * property is determined based on the available tickets and the event date.
+   * On error, sets the data source to an empty array and shows a toast with
+   * the error message.
+   */
   ngOnInit(): void {
     this.reportService.getReport().subscribe({
       next: (data) => {

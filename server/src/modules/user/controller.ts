@@ -90,7 +90,7 @@ const getUser = async (req: Request, res: Response) => {
         role: 0,
         createdAt: 0,
         updatedAt: 0,
-      }
+      },
     );
     if (userDetails) {
       // Step-3: : If user is valid, return the success message and details to user. (Read method description for more details.)

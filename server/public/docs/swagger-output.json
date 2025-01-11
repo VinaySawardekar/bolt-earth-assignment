@@ -41,7 +41,7 @@
     "/user/": {
       "get": {
         "tags": ["User"],
-        "summary": "Get Defualt User Details",
+        "summary": "Get Default User Details",
         "description": "",
         "responses": {
           "default": {

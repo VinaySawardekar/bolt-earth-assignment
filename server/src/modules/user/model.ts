@@ -21,7 +21,7 @@ const userSchema = new Schema(
       enum: ["Active", "Inactive"],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 function hashPassword(plainTextPassword: string): string | null | undefined {

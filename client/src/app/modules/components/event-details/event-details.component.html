@@ -68,7 +68,7 @@
               [disabled]="buttonDisabled"
             >
               {{
-                eventDetails?.availableTickets === 0 || buttonDisabled
+                eventDetails?.availableTickets === 0 && buttonDisabled
                   ? "SOLD OUT"
                   : "Book Tickets"
               }}

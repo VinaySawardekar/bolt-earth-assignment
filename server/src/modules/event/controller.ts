@@ -230,7 +230,7 @@ const purchaseTickets = async (req: EidRequest, res: Response) => {
         availableTickets: availableTicketsAfterPurchase,
         status: availableTicketsAfterPurchase === 0 ? "soldout" : "active",
       },
-      { new: true }
+      { new: true },
     );
 
     if (!updateEvent) {

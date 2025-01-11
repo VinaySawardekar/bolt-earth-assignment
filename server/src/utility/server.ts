@@ -12,8 +12,6 @@ const morgan = require("morgan");
 const morganTiny = morgan("tiny");
 const helmet = require("helmet");
 const compression = require("compression");
-let cilentBuildPath: string;
-let clientIndexFile: string;
 /**
  * Creates a express server for the Event Booking System.
  * - It has configuration for cors, limiter, helmet, compression, swagger, db, and routes path.
@@ -43,7 +41,7 @@ const createServer = () => {
 
   const limiter = rateLimit({
     windowMs: 60 * 1000, // 1 minutes
-    max: 1000, // Limit each IP to 1000 requests per `window` (here, per 1 minutes)
+    max: 100, // Limit each IP to 100 requests per `window` (here, per 1 minutes)
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
     message: maxLimit,
@@ -70,28 +68,6 @@ const createServer = () => {
   db();
   /** Create Default User */
   createDefaultUser();
-  /** Server Frontent Build */
-  // if (environment.env === "production") {
-  //   cilentBuildPath = path.join(__dirname, "../../../../client/dist/client");
-  // } else {
-  //   cilentBuildPath = path.join(__dirname, "../../../client/dist/client");
-  // }
-  // app.use(express.static(cilentBuildPath));
-
-  // if (environment.env === "production") {
-  //   clientIndexFile = path.join(
-  //     __dirname,
-  //     "../../../../client/dist/client/index.html"
-  //   );
-  // } else {
-  //   clientIndexFile = path.join(
-  //     __dirname,
-  //     "../../../client/dist/client/index.html"
-  //   );
-  // }
-  // app.use("*", (req, res) => {
-  //   res.sendFile(clientIndexFile);
-  // });
   return app;
 };
 

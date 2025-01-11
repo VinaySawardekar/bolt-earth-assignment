@@ -49,6 +49,12 @@ export class EventdialogComponent {
     });
   }
 
+  /**
+   * Checks if the value of the given AbstractControl is greater than zero.
+   *
+   * @param control The AbstractControl to check.
+   * @returns ValidationErrors if the value is not greater than zero, null otherwise.
+   */
   greaterThanZeroValidator(control: AbstractControl): ValidationErrors | null {
     if (control.value <= 0) {
       return { greaterThanZero: true };
@@ -56,6 +62,12 @@ export class EventdialogComponent {
     return null;
   }
 
+  /**
+   * Checks if the date provided is above today's date.
+   *
+   * @param control The AbstractControl to check.
+   * @returns ValidationErrors if the date is not above today's date, null otherwise.
+   */
   dateAboveTodayValidator(control: AbstractControl): ValidationErrors | null {
     const today = new Date();
     const inputDate = new Date(control.value);

@@ -26,7 +26,7 @@ const eventSchema = new Schema(
     duration: { type: String, required: false, default: "1hr" },
     location: { type: String, required: false, default: "India" },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Event = mongoose.model("Event", eventSchema);

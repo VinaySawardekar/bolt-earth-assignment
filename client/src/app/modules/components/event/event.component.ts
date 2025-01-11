@@ -59,6 +59,15 @@ export class EventComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens the event dialog box.
+   *
+   * This method opens the event dialog box as a modal window.
+   * When the dialog is closed, it subscribes to the result of the dialog
+   * and creates a new event on the server using the result.
+   * If the event is created successfully, it logs a success message.
+   * If there is an error, it logs an error message.
+   */
   openEventDialog(): void {
     const dialogRef = this.dialog.open(EventdialogComponent, {
       width: '500px',
@@ -81,6 +90,7 @@ export class EventComponent implements OnInit {
             // handle successful data retrieval here
             if (data.status === 'success') {
               this.toastService.showToast(data.message);
+              this.ngOnInit();
             }
           },
           error: (error) => {
