@@ -13,7 +13,7 @@
 
 | Version | Create         | Update         |
 | :------ | :------------- | :------------- |
-| `1.0.0` | `Jan 11, 2024` | `Jan 11, 2024` |
+| `1.0.0` | `Jan 11, 2025` | `Jan 11, 2025` |
 
 ##### <span style="color:red">IMPORTANT: </span> When ever you update this document, change the <span style="color:green">update date</span> and <span style="color:green">version</span>
 
@@ -98,6 +98,6 @@ Start the server(for back-end)
 
 #### Project Contributors
 
-| Name                                                              | Email                            |
-| :---------------------------------------------------------------- | :------------------------------- |
-| [Vinay Sawardekar](https://www.linkedin.com/in/vinay-sawardekar/) | <vinaysawardekar@valuebound.com> |
+| Name                                                              | Email                         |
+| :---------------------------------------------------------------- | :---------------------------- |
+| [Vinay Sawardekar](https://www.linkedin.com/in/vinay-sawardekar/) | <vinaysawardekar99@gmail.com> |
