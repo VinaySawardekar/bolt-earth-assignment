@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="flex-container">
+    <div *ngFor="let event of eventList" class="events-list">
+      <mat-card class="example-card" (click)="openEvent(event._id)">
+        <mat-card-header>
+          <mat-card-title>{{ event.name }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="https://picsum.photos/200"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p class="overflow">{{ event.description }}</p>
+          <p class="overflow">
+            {{ event.category }} | {{ event.duration }} | {{ event.location }}
+          </p>
+          <p>&#8377; {{ event.ticketPrice }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="chip">
+            <mat-chip-listbox aria-label="Status">
+              <mat-chip-option
+                [style.background-color]="
+                  event.book_status === 'BOOKINGS OPEN'
+                    ? 'lightgreen'
+                    : event.book_status === 'CLOSED'
+                    ? 'lightgray'
+                    : '#eb958f'
+                "
+                color="accent"
+                >{{ event.book_status }}</mat-chip-option
+              >
+            </mat-chip-listbox>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+    <div class="add-new">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>New Event ??</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-actions>
+          <button mat-button (click)="openEventDialog()">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="add"
+            ></mat-icon
+            >Add New Event
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

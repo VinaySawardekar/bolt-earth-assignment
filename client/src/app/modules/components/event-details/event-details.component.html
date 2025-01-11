@@ -1,0 +1,100 @@
+<div class="event-details-container">
+  <mat-card class="event-details-card">
+    <div class="go-back">
+      <button mat-raised-button (click)="goBack()">< Back</button>
+    </div>
+    <div class="flex-container">
+      <div class="event-details-left">
+        <img src="https://picsum.photos/600" mat-card-image alt="Event Image" />
+      </div>
+      <div class="event-details-right">
+        <mat-card-content>
+          <h1>{{ eventDetails.name }}</h1>
+          <p>{{ eventDetails.description }}</p>
+          <h2>
+            {{ eventDetails.category }} | {{ eventDetails.duration }} |
+            {{ eventDetails.location }}
+          </h2>
+          <h3>&#8377; {{ eventDetails.ticketPrice }}</h3>
+          <h2>Available Tickets: {{ eventDetails.availableTickets }}</h2>
+          <h3>Event Date: {{ eventDetails.date | date : "dd/MM/yyyy" }}</h3>
+          <div class="chip">
+            <mat-chip-listbox aria-label="Status">
+              <mat-chip-option
+                [style.background-color]="
+                  status === 'BOOKINGS OPEN'
+                    ? 'lightgreen'
+                    : status === 'CLOSED'
+                    ? 'lightgray'
+                    : '#eb958f'
+                "
+                color="accent"
+                >{{ status }}</mat-chip-option
+              >
+            </mat-chip-listbox>
+          </div>
+          <div class="event-details-actions">
+            <div class="counter">
+              <button (click)="removeEventTicket()" mat-icon-button>
+                <mat-icon>remove</mat-icon>
+              </button>
+              <input
+                matInput
+                type="number"
+                [(ngModel)]="noOfTickets"
+                (ngModelChange)="onNoOfTicketsChange($event)"
+                class="counter-value"
+                [matTooltip]="
+                  noOfTickets < 1 ||
+                  noOfTickets > eventDetails?.availableTickets
+                    ? 'Please enter a valid number of tickets'
+                    : ''
+                "
+                [matTooltipDisabled]="
+                  !(
+                    noOfTickets < 1 ||
+                    noOfTickets > eventDetails?.availableTickets
+                  )
+                "
+              />
+              <button (click)="addEventTicket()" mat-icon-button>
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+            <button
+              (click)="purchaseTickets()"
+              mat-raised-button
+              color="primary"
+              [disabled]="buttonDisabled"
+            >
+              {{
+                eventDetails?.availableTickets === 0 || buttonDisabled
+                  ? "SOLD OUT"
+                  : "Book Tickets"
+              }}
+            </button>
+          </div>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="error-msg">
+            <mat-error
+              *ngIf="
+                noOfTickets < 1 || noOfTickets > eventDetails?.availableTickets
+              "
+            >
+              Please enter a valid number of tickets
+            </mat-error>
+            <mat-error *ngIf="bookingError">
+              {{ bookingError }}
+            </mat-error>
+            <mat-error
+              *ngiF="eventDetails?.availableTickets === 0 || buttonDisabled"
+            >
+              Tickets are not available Or The Event Date is Passed.
+            </mat-error>
+          </div>
+        </mat-card-footer>
+      </div>
+    </div>
+  </mat-card>
+</div>

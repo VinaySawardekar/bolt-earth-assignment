@@ -1,0 +1,38 @@
+.icon-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  background: white;
+  color: black;
+  height: 80px;
+  padding: 0 40px 0 30px;
+}
+
+.icon-user {
+  width: 21.5px !important;
+  margin: 0 0 0 10px;
+}
+
+.icon-user-text {
+  padding-left: 10px;
+  vertical-align: middle;
+  color: #888b9a;
+  display: flex;
+  height: 21.5px;
+}
+.icon-user-text:hover {
+  font-weight: bold;
+}
+
+.icon-user-section {
+  border-radius: 10px 0 10px 10px;
+  background: white;
+}
+
+.menu-user {
+  display: flex !important;
+}
+
+.spacing {
+  margin: 0 10px;
+}

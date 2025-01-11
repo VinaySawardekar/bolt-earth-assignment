@@ -1,0 +1,50 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend for Event Ticketing System",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx ts-node index.ts",
+    "start:dev": "npm run swagger-autogen && npx prettier --write . && nodemon index.ts",
+    "build": "tsc --build && cp .env ./build/.env ",
+    "swagger-autogen": "node swagger.ts"
+  },
+  "keywords": [
+    "Event",
+    "Ticketing",
+    "System"
+  ],
+  "author": "Vinay Sawardekar",
+  "contributors": [
+    {
+      "name": "Vinay Sawardekar",
+      "email": "vinaysawardekar@valuebound.com",
+      "url": "https://www.linkedin.com/in/vinay-sawardekar/"
+    }
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.4",
+    "morgan": "^1.10.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "tiny": "^0.0.10",
+    "ts-node": "^10.9.2",
+    "winston": "^3.17.0"
+  }
+}

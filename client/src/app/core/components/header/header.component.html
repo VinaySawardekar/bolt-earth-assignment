@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <a [routerLink]="['/']" class="logo"> EVENT BOOKING SYSTEM </a>
+  <div class="icon-spacer"></div>
+
+  <a class="spacing" [routerLink]="['/events']" mat-raised-button>Events</a>
+  <a class="spacing" [routerLink]="['/reports']" mat-raised-button>Reports</a>
+
+  <mat-icon svgIcon="user" class="user-icon spacing"></mat-icon>
+
+  <h1 class="spacing username">{{ username }}</h1>
+</mat-toolbar>

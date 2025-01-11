@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+  height: 100%;
+  background-color: #f6f6f6;
+}
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif !important;
+}
+
+::ng-deep .mat-typography {
+  font-family: "Lato", sans-serif;
+}
+.mat-mdc-snack-bar-container {
+  &.custom-snackbar {
+    position: absolute;
+    top: 0;
+    left: 75%;
+    width: 160px;
+    display: block;
+    --mdc-snackbar-container-color: #888b9a;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #b68200;
+}

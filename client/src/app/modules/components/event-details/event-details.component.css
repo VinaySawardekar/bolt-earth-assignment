@@ -1,0 +1,35 @@
+.event-details-card {
+  margin: 20px;
+}
+
+.event-details-left,
+.event-details-right {
+  padding: 10px;
+}
+
+.event-details-right {
+  padding-left: 50px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.counter-value {
+  font-size: large;
+  width: 100px;
+}
+
+.error-msg {
+  margin-top: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+.go-back {
+  margin-top: 10px;
+  margin-left: 10px;
+}

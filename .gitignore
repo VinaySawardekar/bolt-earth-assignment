@@ -1,0 +1,31 @@
+# For backend 
+server/node_modules/
+server/.env
+server/coverage/
+server/.nyc_output/
+server/.DS_Store
+server/.vscode
+
+
+# For front-end
+client/node_modules/
+client/yarn.lock
+client/.pnp
+.pnp.js
+client/coverage
+client/.DS_Store
+client/.env
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/.env.development
+client/.env.production
+client/.env.local
+client/.vscode
+client/.angular
+
+# For Root Directory
+.DS_Store
+.env.development
+.env.production
+.env.local
