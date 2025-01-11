@@ -1,4 +1,4 @@
-# Frontend Documentation
+# Backend Documentation
 
 ### <span style="color:red">IMPORTANT: </span><span style="color:blue">VSCode Extension</span>(To see UI for any md file)
 
@@ -15,11 +15,9 @@
 
 #### Document Description
 
-Contains document of the frontend resources such as Node.js, angular CLI that are being using in our project.
+Contains document of the Backend resources such as Node.js, that are being using in our project.
 
-### Install @angular/cli
-
-Ref: https://www.npmjs.com/package/@angular/cli
+### Install node@v20.12.x
 
 1. Install Locally
 
@@ -57,23 +55,30 @@ Ref: https://www.npmjs.com/package/@angular/cli
      a) https://stackoverflow.com/a/74500030/11926970 Follow this answer  nvm alias default node
      ```
 
-   - Install @angular/cli
-     ```sh
-         npm i @angular/cli -g
-     ```
+### Setup the Environment Variables
 
-#### Start the app
+- Create a new file with name `.env` at the root of server folder.
+- Copy the contents `.env.sample` to the `.env`.
+- Update the values of the keys in `.env` as per your configuration.
+
+### Running the application
+
+#### Start the server
 
 ```bash
-  npm start
+  npm  start
 ```
 
-#### Build the app
-
-##### For Production
+##### To Start it with nodemon
 
 ```bash
-  npm build
+  npm run start:dev
+```
+
+#### Build the server
+
+```bash
+  npm  build
 ```
 
 or
@@ -82,17 +87,41 @@ or
   npm run build
 ```
 
-##### For Development
+##### Health Check
 
-```bash
-  npm run build:dev
+To check whether the Server is Running or not.
+
+Go on this Link: `{{HOST}}/api/v1/health-check`
+
+If Everything is fine then it will give response like this:
+
+```
+{
+  "status": "success",
+  "message": "Success.",
+  "data": [
+    {
+      "upTime": 278.131926708,
+      "date": 1713335777089
+    }
+  ]
+}
 ```
 
-##### For Local
+#### Swagger Documentation
+
+##### Generate the Swagger Documentation if it doesn't exist.
 
 ```bash
-  npm run build:local
+  npm run swagger-autogen
 ```
+
+Go on this Link: `{{HOST}}/docs`
+On local: http://localhost:8081/docs
+
+#### Postman Collection Documentation
+
+Go on this Link: [Postman Collection](https://documenter.getpostman.com/view/18304204/2sAYQWJtJM)
 
 #### Project Contributors
 
